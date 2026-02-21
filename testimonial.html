@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Client Testimonials | HustlersConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== COLOR PALETTE ===== */
+        :root {
+            --bg-main: #F3EDE4;
+            --bg-soft: #E9E1D6;
+            --card-bg: #F7F3EC;
+            --primary-brown: #5B3A29;
+            --primary-dark: #3E281C;
+            --accent-teal: #2EC4C7;
+            --text-muted: #7B7B7B;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 70% 60%, #DCEBEA 0%, var(--bg-main) 60%);
+            color: var(--primary-brown);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* NAVBAR – with mobile menu improvements */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(243, 237, 228, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(91, 58, 41, 0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-brown);
+            text-decoration: none;
+            z-index: 1100;
+        }
+
+        /* desktop nav */
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        /* hamburger button - hidden on desktop */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: var(--primary-brown);
+            cursor: pointer;
+            z-index: 1100;
+            background: transparent;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Hide Get Started button on mobile */
+        @media (max-width: 768px) {
+            nav > .btn.btn-teal {
+                display: none !important;
+            }
+        }
+
+        /* mobile nav overlay */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--card-bg);
+                backdrop-filter: blur(15px);
+                background-color: rgba(247, 243, 236, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                z-index: 1050;
+                padding: 60px 20px;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            body.menu-open::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.3);
+                z-index: 1020;
+                pointer-events: none;
+            }
+        }
+
+        .btn {
+            background: var(--primary-brown);
+            color: white;
+            padding: 12px 26px;
+            border-radius: 40px;
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-teal {
+            background: var(--accent-teal);
+        }
+
+        .btn-teal:hover {
+            background: #25a8aa;
+        }
+
+        
+        /* Move mobile nav links closer to top */
+@media (max-width: 768px) {
+    .nav-links {
+        justify-content: flex-start !important;
+        padding-top: 40px; /* adjust this value as needed */
+    }
+}
+
+
+
+
+        /* HERO SECTION */
+        .testimonial-hero {
+            text-align: center;
+            padding: 180px 20px 100px;
+        }
+
+        .testimonial-hero h1 {
+            font-size: 72px;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .testimonial-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--text-muted);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-teal);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        /* SECTION STYLES */
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* TESTIMONIAL SPIRAL SECTION (simplified for mobile) */
+        .testimonial-spiral-section {
+            padding: 100px 0;
+            background: var(--bg-soft);
+        }
+
+        .spiral-container {
+            position: relative;
+            width: 100%;
+            height: 650px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .spiral-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .testimonial-spiral-card {
+            position: absolute;
+            width: 320px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            z-index: 2;
+            border: 1px solid rgba(91, 58, 41, 0.1);
+        }
+
+        .testimonial-spiral-card:hover {
+            transform: scale(1.05) !important;
+            box-shadow: var(--shadow-medium);
+            z-index: 100;
+        }
+
+        .testimonial-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-teal);
+        }
+
+        .testimonial-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .testimonial-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--primary-brown);
+            font-style: italic;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--accent-teal);
+            opacity: 0.3;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(91, 58, 41, 0.1);
+        }
+
+        .testimonial-rating {
+            color: #FFC107;
+            font-size: 16px;
+        }
+
+        .testimonial-date {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .testimonial-controls {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .control-btn {
+            background: var(--primary-brown);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .control-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .control-btn.teal {
+            background: var(--accent-teal);
+        }
+
+        .control-btn.teal:hover {
+            background: #25a8aa;
+        }
+
+        /* TESTIMONIAL GRID SECTION */
+        .testimonial-grid-section {
+            padding: 100px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .testimonial-card .testimonial-header {
+            margin-bottom: 25px;
+        }
+
+        .testimonial-card .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+        }
+
+        .testimonial-card .testimonial-info h4 {
+            font-size: 20px;
+        }
+
+        .testimonial-card .testimonial-quote {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            flex-grow: 1;
+        }
+
+        .testimonial-card .testimonial-footer {
+            margin-top: 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(91, 58, 41, 0.1);
+        }
+
+        /* SERVICE SPECIFIC TESTIMONIALS */
+        .service-testimonials {
+            padding: 100px 0;
+            background: var(--bg-soft);
+        }
+
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .service-tab {
+            background: var(--card-bg);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .service-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-tab.active {
+            background: var(--accent-teal);
+            color: white;
+        }
+
+        .service-testimonial-content {
+            display: none;
+        }
+
+        .service-testimonial-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* VIDEO TESTIMONIALS */
+        .video-testimonials {
+            padding: 100px 0;
+        }
+
+        .video-testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .video-testimonial-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .video-testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-testimonial-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .video-testimonial-card:hover .play-button {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-testimonial-content {
+            padding: 25px;
+        }
+
+        .video-testimonial-content h4 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .video-testimonial-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* YOUTUBE VIDEO SECTION */
+        .youtube-video-section {
+            padding: 100px 0;
+            background: var(--bg-soft);
+        }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .youtube-video-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .youtube-video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .youtube-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .youtube-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .youtube-video-card:hover .youtube-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .youtube-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #FF0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .youtube-video-card:hover .youtube-play-button {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .youtube-video-content {
+            padding: 25px;
+        }
+
+        .youtube-video-content h4 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .youtube-video-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* VIDEO MODAL */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: rgba(0,0,0,0.8);
+            transform: rotate(90deg);
+        }
+
+        .video-container {
+            position: relative;
+            padding-top: 56.25%;
+        }
+
+        .video-container video,
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            outline: none;
+            border: none;
+        }
+
+        /* CTA SECTION */
+        .testimonial-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, #25a8aa 100%);
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* ===== RESPONSIVE FIXES ===== */
+        @media (max-width: 1024px) {
+            .testimonial-hero h1 {
+                font-size: 56px;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .video-testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .youtube-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .spiral-container {
+                height: 550px;
+            }
+            
+            .testimonial-spiral-card {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 25px;
+            }
+
+            .testimonial-hero {
+                padding: 140px 20px 60px;
+            }
+            
+            .testimonial-hero h1 {
+                font-size: 42px;
+            }
+            
+            .testimonial-hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .youtube-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .spiral-container {
+                height: 450px;
+            }
+            
+            .testimonial-spiral-card {
+                width: 260px;
+                padding: 20px;
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-header {
+                gap: 10px;
+            }
+            
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .service-tabs {
+                gap: 10px;
+            }
+            
+            .service-tab {
+                padding: 8px 18px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .cta-content h2 {
+                font-size: 32px;
+            }
+            
+            .spiral-container {
+                height: 400px;
+            }
+            
+            .testimonial-spiral-card {
+                width: 220px;
+                padding: 15px;
+            }
+            
+            .testimonial-quote {
+                font-size: 14px;
+            }
+            
+            .testimonial-footer {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION with hamburger toggle -->
+    <nav>
+        <a href="index.html" class="logo">HustlersConnect</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="testimonial.html" class="active">Testimonials</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+        </div>
+        <a class="btn btn-teal" href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="testimonial-hero">
+        <div class="container">
+            <h1 class="fade-in-up">Client Success Stories</h1>
+            <p class="fade-in-up delay-1">Don't just take our word for it. Hear from entrepreneurs, business owners, and creators who've transformed their digital presence with HustlersConnect.</p>
+            
+            <div class="hero-stats fade-in-up delay-3">
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9/5</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL GRID SECTION -->
+    <section class="testimonial-grid-section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real results from businesses we've helped grow and succeed in the digital space</p>
+            
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Alex Morgan" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Alex Morgan</h4>
+                            <p>CEO, TechVision Inc.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "HustlersConnect transformed our online presence. Their website design increased our conversion rates by 40% in just three months."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">March 15, 2024</div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-in-up delay-1">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Samantha Lee" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Samantha Lee</h4>
+                            <p>Marketing Director, Bloom & Co.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "The social media strategy they implemented tripled our engagement and helped us reach new demographics."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-date">February 28, 2024</div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in-up delay-2">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=8" alt="Marcus Chen" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Marcus Chen</h4>
+                            <p>Founder, UrbanApparel</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Their video editing team turned our raw footage into professional marketing videos that boosted our sales by 65%."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">January 10, 2024</div>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-in-up delay-1">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Jessica Rivera" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Jessica Rivera</h4>
+                            <p>Product Manager, NexGen Solutions</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Working with HustlersConnect was a game-changer for our e-commerce platform. Smooth, performant, and premium feel."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">December 5, 2023</div>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card fade-in-up delay-2">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=14" alt="David Kim" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>David Kim</h4>
+                            <p>Creative Director, Visionary Media</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "The collaborative process was seamless. They turned complex requirements into an elegant solution."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-date">November 18, 2023</div>
+                    </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card fade-in-up delay-3">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=19" alt="Olivia Parker" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Olivia Parker</h4>
+                            <p>CEO, Artisan Coffee Co.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "From concept to launch, professional and innovative. Our e-commerce site now reflects our brand perfectly."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">October 30, 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SPECIFIC TESTIMONIALS -->
+    <section class="service-testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials by Service</h2>
+            <p class="section-subtitle">See what clients say about our specific services</p>
+            
+            <div class="service-tabs">
+                <button class="service-tab active" data-service="all">All Services</button>
+                <button class="service-tab" data-service="web">Website Design</button>
+                <button class="service-tab" data-service="social">Social Media</button>
+                <button class="service-tab" data-service="video">Video Editing</button>
+            </div>
+            
+            <div class="testimonial-grid">
+                <!-- Web Design Testimonials -->
+                <div class="testimonial-card service-testimonial-content active" data-service="web">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Michael Torres" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Michael Torres</h4>
+                            <p>Owner, Fitness Studio</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Our new website increased class bookings by 75%. Clean, professional, and perfectly captures our brand."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">September 12, 2023</div>
+                    </div>
+                </div>
+                <!-- Social Media Testimonials -->
+                <div class="testimonial-card service-testimonial-content active" data-service="social">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=9" alt="Rachel Green" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Rachel Green</h4>
+                            <p>Founder, Sustainable Living</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "They helped grow our Instagram from 2k to 25k in 6 months. Incredible engagement and community."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">August 5, 2023</div>
+                    </div>
+                </div>
+                <!-- Video Editing Testimonials -->
+                <div class="testimonial-card service-testimonial-content active" data-service="video">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="James Wilson" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>James Wilson</h4>
+                            <p>YouTube Creator</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Video editing transformed my content. Production value increased, subscriber growth accelerated by 300%."
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-date">July 18, 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPLOADED VIDEO TESTIMONIALS -->
+    <section class="video-testimonials">
+        <div class="container">
+            <h2 class="section-title">Uploaded Video Testimonials</h2>
+            <p class="section-subtitle">Watch our clients share their experiences with uploaded videos</p>
+            
+            <div class="video-testimonial-grid">
+                <!-- Uploaded Video Testimonial 1 -->
+                <div class="video-testimonial-card fade-in-up">
+                    <div class="video-thumbnail" data-video-type="uploaded" data-video-src="videos/testimonial1.mp4">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alex Morgan Testimonial">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-testimonial-content">
+                        <h4>Alex Morgan</h4>
+                        <p>"How HustlersConnect transformed our business"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+                <!-- Uploaded Video Testimonial 2 -->
+                <div class="video-testimonial-card fade-in-up delay-1">
+                    <div class="video-thumbnail" data-video-type="uploaded" data-video-src="videos/testimonial2.mp4">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Samantha Lee Testimonial">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-testimonial-content">
+                        <h4>Samantha Lee</h4>
+                        <p>"Social media success with HustlersConnect"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    </div>
+                </div>
+                <!-- Uploaded Video Testimonial 3 -->
+                <div class="video-testimonial-card fade-in-up delay-2">
+                    <div class="video-thumbnail" data-video-type="uploaded" data-video-src="videos/testimonial3.mp4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marcus Chen Testimonial">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-testimonial-content">
+                        <h4>Marcus Chen</h4>
+                        <p>"Video editing that boosted our sales"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YOUTUBE VIDEO TESTIMONIALS -->
+    <section class="youtube-video-section">
+        <div class="container">
+            <h2 class="section-title">YouTube Video Testimonials</h2>
+            <p class="section-subtitle">Watch our clients share their experiences on YouTube</p>
+            
+            <div class="youtube-grid">
+                <!-- YouTube Video Testimonial 1 -->
+                <div class="youtube-video-card fade-in-up">
+                    <div class="youtube-thumbnail" data-video-type="youtube" data-video-id="r2AWie8hCm4">
+                        <img src="https://img.youtube.com/vi/r2AWie8hCm4/maxresdefault.jpg" alt="Client Success Story 1">
+                        <div class="youtube-play-button"><i class="fab fa-youtube"></i></div>
+                    </div>
+                    <div class="youtube-video-content">
+                        <h4>Sarah Johnson</h4>
+                        <p>"From startup to 6-figure business with HustlersConnect"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+                <!-- YouTube Video Testimonial 2 -->
+                <div class="youtube-video-card fade-in-up delay-1">
+                    <div class="youtube-thumbnail" data-video-type="youtube" data-video-id="QyhwSYhX09s">
+                        <img src="https://img.youtube.com/vi/QyhwSYhX09s/maxresdefault.jpg" alt="Client Success Story 2">
+                        <div class="youtube-play-button"><i class="fab fa-youtube"></i></div>
+                    </div>
+                    <div class="youtube-video-content">
+                        <h4>Michael Rodriguez</h4>
+                        <p>"How we scaled our e-commerce store with expert guidance"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    </div>
+                </div>
+                <!-- YouTube Video Testimonial 3 -->
+                <div class="youtube-video-card fade-in-up delay-2">
+                    <div class="youtube-thumbnail" data-video-type="youtube" data-video-id="wbnaHgSttVo">
+                        <img src="https://img.youtube.com/vi/wbnaHgSttVo/maxresdefault.jpg" alt="Client Success Story 3">
+                        <div class="youtube-play-button"><i class="fab fa-youtube"></i></div>
+                    </div>
+                    <div class="youtube-video-content">
+                        <h4>Emma Thompson</h4>
+                        <p>"Building a brand that stands out in a crowded market"</p>
+                        <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <video id="videoPlayer" controls style="display: none;"></video>
+                <iframe id="youtubePlayer" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="display: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">&copy; 2023 HustlersConnect. All rights reserved.</div>
+                 <div class="social-icons">
+                    <a href="https://www.instagram.com/roshan.yadav_official?igsh=MTF4c3BlM2tjY2ZsMA=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/roshan-yadav-2a2596259/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/roshan_yadav024"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const body = document.body;
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    body.classList.add('menu-open');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    body.classList.remove('menu-open');
+                }
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    body.classList.remove('menu-open');
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    body.classList.remove('menu-open');
+                }
+            });
+        }
+
+        // Service tabs
+        document.querySelectorAll('.service-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.service-testimonial-content').forEach(content => {
+                    if (service === 'all' || content.getAttribute('data-service') === service) {
+                        content.style.display = 'block';
+                        setTimeout(() => content.style.opacity = '1', 10);
+                    } else {
+                        content.style.opacity = '0';
+                        setTimeout(() => content.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Video modal
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        const closeModal = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.video-thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const type = this.getAttribute('data-video-type');
+                const src = this.getAttribute('data-video-src');
+                if (type === 'uploaded') {
+                    videoPlayer.style.display = 'block';
+                    youtubePlayer.style.display = 'none';
+                    videoPlayer.src = src;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => videoPlayer.play().catch(() => {}), 300);
+                }
+            });
+        });
+
+        document.querySelectorAll('.youtube-thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const type = this.getAttribute('data-video-type');
+                const id = this.getAttribute('data-video-id');
+                if (type === 'youtube') {
+                    youtubePlayer.style.display = 'block';
+                    videoPlayer.style.display = 'none';
+                    youtubePlayer.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        function closeVideoModal() {
+            videoModal.style.display = 'none';
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+            videoPlayer.style.display = 'none';
+            youtubePlayer.src = '';
+            youtubePlayer.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        closeModal.addEventListener('click', closeVideoModal);
+        videoModal.addEventListener('click', e => { if (e.target === videoModal) closeVideoModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && videoModal.style.display === 'flex') closeVideoModal(); });
+
+        // Scroll animations
+        function checkScroll() {
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            checkScroll();
+
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.style.backgroundColor = 'rgba(243, 237, 228, 0.95)';
+                    nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    nav.style.backgroundColor = 'rgba(243, 237, 228, 0.9)';
+                    nav.style.boxShadow = 'none';
+                }
+                checkScroll();
+            });
+
+            // Optional: spiral animation (simplified, can be enabled if needed)
+        });
+    </script>
+</body>
+</html>
